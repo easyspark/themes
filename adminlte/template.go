@@ -1,6 +1,6 @@
 package adminlte
 
-var TemplateList = map[string]string{"admin_panel":`{{define "admin_panel"}}
+var TemplateList = map[string]string{"admin_panel": `{{define "admin_panel"}}
     <div class="navbar-custom-menu">
         <ul class="nav navbar-nav">
 
@@ -64,13 +64,13 @@ var TemplateList = map[string]string{"admin_panel":`{{define "admin_panel"}}
              </li> -->
         </ul>
     </div>
-{{end}}`,"components/alert":`{{define "alert"}}
+{{end}}`, "components/alert": `{{define "alert"}}
 <div class="alert alert-{{.Theme}} alert-dismissible">
     <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
     <h4>{{langHtml .Title}}</h4>
     {{langHtml .Content}}
 </div>
-{{end}}`,"components/box":`{{define "box"}}
+{{end}}`, "components/box": `{{define "box"}}
 <div class="box box-{{.Theme}}">
     {{if eq .HeadColor ""}}
         <div class="box-header {{.HeadBorder}}">
@@ -97,7 +97,7 @@ var TemplateList = map[string]string{"admin_panel":`{{define "admin_panel"}}
     </div>
     {{end}}
 </div>
-{{end}}`,"components/button":`{{define "button"}}
+{{end}}`, "components/button": `{{define "button"}}
     <div class="btn-group {{.Orientation}}" {{.Style}}>
         {{if eq .Href ""}}
             {{if ne .LoadingText ""}}
@@ -117,9 +117,9 @@ var TemplateList = map[string]string{"admin_panel":`{{define "admin_panel"}}
             </a>
         {{end}}
     </div>
-{{end}}`,"components/col":`{{define "col"}}
+{{end}}`, "components/col": `{{define "col"}}
 <div class="{{.Size}}">{{langHtml .Content}}</div>
-{{end}}`,"components/form/color":`{{define "form_color"}}
+{{end}}`, "components/form/color": `{{define "form_color"}}
     <div class="input-group colorpicker-element">
         <span class="input-group-addon"><i style="background-color: rgb(0, 0, 0);"></i></span>
         <input {{if .Must}}required="1"{{end}} style="width: 140px" type="text" id="{{.Field}}" name="{{.Field}}"
@@ -128,7 +128,7 @@ var TemplateList = map[string]string{"admin_panel":`{{define "admin_panel"}}
     <script>
         $('.{{.Field}}').parent().colorpicker([]);
     </script>
-{{end}}`,"components/form/currency":`{{define "form_currency"}}
+{{end}}`, "components/form/currency": `{{define "form_currency"}}
     <div class="input-group">
         <span class="input-group-addon">$</span>
         <input {{if .Must}}required="1"{{end}} style="width: 120px; text-align: right;" type="text" id="{{.Field}}"
@@ -145,7 +145,7 @@ var TemplateList = map[string]string{"admin_panel":`{{define "admin_panel"}}
             });
         });
     </script>
-{{end}}`,"components/form/custom":`{{define "form_custom"}}
+{{end}}`, "components/form/custom": `{{define "form_custom"}}
     <div class="input-group">
         {{.CustomContent}}
     </div>
@@ -159,7 +159,7 @@ var TemplateList = map[string]string{"admin_panel":`{{define "admin_panel"}}
             {{.CustomCss}}
         </style>
     {{end}}
-{{end}}`,"components/form/datetime":`{{define "form_datetime"}}
+{{end}}`, "components/form/datetime": `{{define "form_datetime"}}
     {{if not .Editable}}
         <div class="box box-solid box-default no-margin">
             <div class="box-body" style="min-height: 40px;">
@@ -187,7 +187,7 @@ var TemplateList = map[string]string{"admin_panel":`{{define "admin_panel"}}
             });
         </script>
     {{end}}
-{{end}}`,"components/form/datetime_range":`{{define "form_datetime_range"}}
+{{end}}`, "components/form/datetime_range": `{{define "form_datetime_range"}}
     <div class="input-group">
         {{if ne .Label ""}}
             <span class="input-group-addon">{{.Label}}</span>
@@ -215,20 +215,20 @@ var TemplateList = map[string]string{"admin_panel":`{{define "admin_panel"}}
             });
         });
     </script>
-{{end}}`,"components/form/default":`{{define "form_default"}}
+{{end}}`, "components/form/default": `{{define "form_default"}}
     <div class="box box-solid box-default no-margin">
         <div class="box-body" style="min-height: 40px;">
             {{.Value}}
         </div>
     </div>
-{{end}}`,"components/form/email":`{{define "form_email"}}
+{{end}}`, "components/form/email": `{{define "form_email"}}
     <div class="input-group">
         <span class="input-group-addon"><i class="fa fa-envelope fa-fw"></i></span>
         <input {{if .Must}}required="1"{{end}} type="email" id="{{.Field}}" name="{{.Field}}" value='{{.Value}}'
                class="form-control json"
                placeholder="{{.Placeholder}}">
     </div>
-{{end}}`,"components/form/file":`{{define "form_file"}}
+{{end}}`, "components/form/file": `{{define "form_file"}}
     <input type="file" class="{{.Field}}" name="{{.Field}}" data-initial-preview="{{.Value2}}"
            data-initial-caption="{{.Value}}">
     <input type="hidden" value="0" name="{{.Field}}__delete_flag" class="{{.Field}}__delete_flag">
@@ -238,13 +238,13 @@ var TemplateList = map[string]string{"admin_panel":`{{define "admin_panel"}}
             $(".{{.Field}}__delete_flag").val("1")
         });
     </script>
-{{end}}`,"components/form/help_block":`{{define "help_block"}}
+{{end}}`, "components/form/help_block": `{{define "help_block"}}
     {{if ne . ""}}
         <span class="help-block">
             <i class="fa fa-info-circle"></i>&nbsp;{{.}}
         </span>
     {{end}}
-{{end}}`,"components/form/iconpicker":`{{define "form_iconpicker"}}
+{{end}}`, "components/form/iconpicker": `{{define "form_iconpicker"}}
     <div class="input-group">
         <span class="input-group-addon"><i class="fa"></i></span>
         {{if eq .Value ""}}
@@ -260,14 +260,14 @@ var TemplateList = map[string]string{"admin_panel":`{{define "admin_panel"}}
     <script>
         $('.iconpicker-input').iconpicker({placement: 'bottomLeft'});
     </script>
-{{end}}`,"components/form/ip":`{{define "form_ip"}}
+{{end}}`, "components/form/ip": `{{define "form_ip"}}
     <div class="input-group">
         <span class="input-group-addon"><i class="fa fa-laptop fa-fw"></i></span>
         <input {{if .Must}}required="1"{{end}} style="width: 130px" type="text" id="{{.Field}}" name="{{.Field}}"
                value='{{.Value}}' class="form-control json"
                placeholder="{{.Placeholder}}">
     </div>
-{{end}}`,"components/form/multi_file":`{{define "form_multi_file"}}
+{{end}}`, "components/form/multi_file": `{{define "form_multi_file"}}
     <input type="file" class="{{.Field}}" name="{{.Field}}" multiple data-initial-caption="{{lang "Input"}} {{.Field}}">
     <input type="hidden" value="0" name="{{.Field}}__delete_flag" class="{{.Field}}__delete_flag">
     <script>
@@ -280,7 +280,7 @@ var TemplateList = map[string]string{"admin_panel":`{{define "admin_panel"}}
             $(".{{.Field}}__delete_flag").val("1")
         });
     </script>
-{{end}}`,"components/form/number":`{{define "form_number"}}
+{{end}}`, "components/form/number": `{{define "form_number"}}
     <div class="input-group">
         <input {{if .Must}}required="1"{{end}} style="width: 100px; text-align: center;" type="text" id="{{.Field}}"
                name="{{.Field}}"
@@ -298,7 +298,7 @@ var TemplateList = map[string]string{"admin_panel":`{{define "admin_panel"}}
                 });
         })
     </script>
-{{end}}`,"components/form/number_range":`{{define "form_number_range"}}
+{{end}}`, "components/form/number_range": `{{define "form_number_range"}}
     <div class="input-group number-range">
         <input style="text-align: center;" type="text" id="{{.Field}}_start__goadmin"
                name="{{.Field}}_start__goadmin"
@@ -332,7 +332,7 @@ var TemplateList = map[string]string{"admin_panel":`{{define "admin_panel"}}
             width: 100%;
         }
     </style>
-{{end}}`,"components/form/password":`{{define "form_password"}}
+{{end}}`, "components/form/password": `{{define "form_password"}}
     {{if .Editable}}
         <div class="input-group">
             <span class="input-group-addon"><i class="fa fa-eye-slash"></i></span>
@@ -345,7 +345,7 @@ var TemplateList = map[string]string{"admin_panel":`{{define "admin_panel"}}
             <div class="box-body">********</div>
         </div>
     {{end}}
-{{end}}`,"components/form/radio":`{{define "form_radio"}}
+{{end}}`, "components/form/radio": `{{define "form_radio"}}
     {{$field := .Field}}
     {{range $key, $v := .Options }}
         <input type="radio" name="{{$field}}" value="{{$v.Value}}"
@@ -357,7 +357,7 @@ var TemplateList = map[string]string{"admin_panel":`{{define "admin_panel"}}
             $('.{{.Field}}').iCheck({radioClass: 'iradio_minimal-blue'});
         });
     </script>
-{{end}}`,"components/form/richtext":`{{define "form_rich_text"}}
+{{end}}`, "components/form/richtext": `{{define "form_rich_text"}}
     <div id="{{.Field}}-editor">
     </div>
     <input type="hidden" id="{{.Field}}" name="{{.Field}}" value='{{.Value}}'
@@ -376,7 +376,7 @@ var TemplateList = map[string]string{"admin_panel":`{{define "admin_panel"}}
         {{end}}
         window.wangEditor.fullscreen.init('#{{.Field}}-editor');
     </script>
-{{end}}`,"components/form/select":`{{define "form_select"}}
+{{end}}`, "components/form/select": `{{define "form_select"}}
     <select class="form-control {{.Field}} select2-hidden-accessible" style="width: 100%;" name="{{.Field}}[]"
             multiple="" data-placeholder="{{.Placeholder}}" tabindex="-1" aria-hidden="true"
             {{if not .Editable}}disabled="disabled"{{end}}>
@@ -388,7 +388,7 @@ var TemplateList = map[string]string{"admin_panel":`{{define "admin_panel"}}
     <script>
         $(".{{.Field}}").select2({{.OptionExt}});
     </script>
-{{end}}`,"components/form/selectbox":`{{define "form_selectbox"}}
+{{end}}`, "components/form/selectbox": `{{define "form_selectbox"}}
     <select class="form-control {{.Field}}" style="width: 100%;" name="{{.Field}}[]" multiple="multiple"
             data-placeholder="Input {{.Head}}" {{if not .Editable}}disabled="disabled"{{end}}>
         {{range  $key, $v := .Options }}
@@ -405,7 +405,7 @@ var TemplateList = map[string]string{"admin_panel":`{{define "admin_panel"}}
             "filterPlaceHolder": "Filter"
         });
     </script>
-{{end}}`,"components/form/singleselect":`{{define "form_select_single"}}
+{{end}}`, "components/form/singleselect": `{{define "form_select_single"}}
     <select class="form-control {{.Field}} select2-hidden-accessible" style="width: 100%;" name="{{.Field}}"
             data-multiple="false" data-placeholder="{{.Placeholder}}" tabindex="-1" aria-hidden="true"
             {{if not .Editable}}disabled="disabled"{{end}}>
@@ -417,7 +417,7 @@ var TemplateList = map[string]string{"admin_panel":`{{define "admin_panel"}}
     <script>
         $(".{{.Field}}").select2({{.OptionExt}});
     </script>
-{{end}}`,"components/form/switch":`{{define "form_switch"}}
+{{end}}`, "components/form/switch": `{{define "form_switch"}}
     <input id="__{{.Field}}" class="{{.Field}} ga_checkbox" {{(index .Options 0).SelectedLabel}} type="checkbox"
            name="__checkbox__{{.Field}}">
     {{$index := 0}}
@@ -445,7 +445,7 @@ var TemplateList = map[string]string{"admin_panel":`{{define "admin_panel"}}
             }
         })
     </script>
-{{end}}`,"components/form/text":`{{define "form_text"}}
+{{end}}`, "components/form/text": `{{define "form_text"}}
     {{if .Editable}}
         <div class="input-group">
             {{if eq .Label ""}}
@@ -492,18 +492,18 @@ var TemplateList = map[string]string{"admin_panel":`{{define "admin_panel"}}
             })
         </script>
     {{end}}
-{{end}}`,"components/form/textarea":`{{define "form_textarea"}}
+{{end}}`, "components/form/textarea": `{{define "form_textarea"}}
     <textarea {{if .Must}}required="1"{{end}} name="{{.Field}}" class="form-control" rows="5"
               placeholder="{{.Placeholder}}"
                       {{if not .Editable}}disabled="disabled"{{end}}>{{.Value}}</textarea>
-{{end}}`,"components/form/url":`{{define "form_url"}}
+{{end}}`, "components/form/url": `{{define "form_url"}}
     <div class="input-group">
         <span class="input-group-addon"><i class="fa fa-internet-explorer fa-fw"></i></span>
         <input {{if .Must}}required="1"{{end}} type="text" id="{{.Field}}" name="{{.Field}}" value='{{.Value}}'
                class="form-control json"
                placeholder="{{.Placeholder}}">
     </div>
-{{end}}`,"components/form":`{{define "form"}}
+{{end}}`, "components/form": `{{define "form"}}
     <script src={{link .CdnUrl .Prefix "/assets/dist/js/form.min.js"}}></script>
     {{.Header}}
     <form action="{{.Url}}" method="{{.Method}}" accept-charset="UTF-8" class="form-horizontal" pjax-container style="background-color: white;">
@@ -532,7 +532,7 @@ var TemplateList = map[string]string{"admin_panel":`{{define "admin_panel"}}
         {{end}}
     </form>
     {{.Footer}}
-{{end}}`,"components/form_components":`{{define "form_components"}}
+{{end}}`, "components/form_components": `{{define "form_components"}}
     {{if eq .FormType.String "default"}}
         {{ template "form_default" .  }}
     {{else if eq .FormType.String "text"}}
@@ -585,7 +585,7 @@ var TemplateList = map[string]string{"admin_panel":`{{define "admin_panel"}}
             <i class="fa fa-info-circle"></i>&nbsp;{{.HelpMsg}}
         </span>
     {{end}}
-{{end}}`,"components/form_components_layout":`{{define "form_components_layout"}}
+{{end}}`, "components/form_components_layout": `{{define "form_components_layout"}}
 
     {{if ne (len .ContentList) 0}}
 
@@ -677,7 +677,7 @@ var TemplateList = map[string]string{"admin_panel":`{{define "admin_panel"}}
         {{end}}
 
     {{end}}
-{{end}}`,"components/form_layout_default":`{{define "form_layout_default"}}
+{{end}}`, "components/form_layout_default": `{{define "form_layout_default"}}
 
     <div class="box-body">
         <div class="fields-group">
@@ -691,7 +691,7 @@ var TemplateList = map[string]string{"admin_panel":`{{define "admin_panel"}}
         {{end}}
     </div>
 
-{{end}}`,"components/form_layout_flow":`{{define "form_layout_flow"}}
+{{end}}`, "components/form_layout_flow": `{{define "form_layout_flow"}}
 
     <div class="box-body">
         <div class="fields-group">
@@ -705,7 +705,7 @@ var TemplateList = map[string]string{"admin_panel":`{{define "admin_panel"}}
         {{end}}
     </div>
 
-{{end}}`,"components/form_layout_tab":`{{define "form_layout_tab"}}
+{{end}}`, "components/form_layout_tab": `{{define "form_layout_tab"}}
 
     <div class="box-body">
         <div class="nav-tabs-custom">
@@ -732,7 +732,7 @@ var TemplateList = map[string]string{"admin_panel":`{{define "admin_panel"}}
         </div>
     </div>
 
-{{end}}`,"components/form_layout_two_col":`{{define "form_layout_two_col"}}
+{{end}}`, "components/form_layout_two_col": `{{define "form_layout_two_col"}}
     <div class="row">
         {{ template "form_components_layout" .}}
     </div>
@@ -742,7 +742,7 @@ var TemplateList = map[string]string{"admin_panel":`{{define "admin_panel"}}
             <input type="hidden" name="{{$.PrimaryKey}}" value='{{$data.Value}}'>
         {{end}}
     {{end}}
-{{end}}`,"components/image":`{{define "image"}}
+{{end}}`, "components/image": `{{define "image"}}
     {{if .HasModal}}
         <img src="{{.Src}}" width="{{.Width}}" height="{{.Height}}" data-toggle="modal" data-target="#img_{{.Uuid}}" style="cursor: zoom-in;">
         <div id="img_{{.Uuid}}" class="modal fade {{.Uuid}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -770,12 +770,12 @@ var TemplateList = map[string]string{"admin_panel":`{{define "admin_panel"}}
     {{else}}
         <img src="{{.Src}}" width="{{.Width}}" height="{{.Height}}">
     {{end}}
-{{end}}`,"components/label":`{{define "label"}}
+{{end}}`, "components/label": `{{define "label"}}
 <span class="label label-{{.Type}}" style="background-color: {{.Color}};">{{langHtml .Content}}</span>
-{{end}}`,"components/link":`{{define "link"}}
+{{end}}`, "components/link": `{{define "link"}}
     <a {{if .NewTab}}class="new-tab-link"{{end}} data-title="{{.Title}}" href="{{.URL}}">{{.Content}}</a>
-{{end}}`,"components/paginator":`{{define "paginator"}}
-    <div style="float: left;margin-top: 21px;">{{lang "showing"}} <b>{{.CurPageStartIndex}}</b> {{lang "to"}}
+{{end}}`, "components/paginator": `{{define "paginator"}}
+    <div style="float: left;margin-top: 21px;">{{lang "显示"}} <b>{{.CurPageStartIndex}}</b> {{lang "to"}}
         <b>{{.CurPageEndIndex}}</b> {{lang "of"}} <b>{{.Total}}</b> {{lang "entries"}} &nbsp;&nbsp;&nbsp;{{.ExtraInfo}}
     </div>
     <ul class="pagination pagination-sm no-margin pull-right">
@@ -834,7 +834,7 @@ var TemplateList = map[string]string{"admin_panel":`{{define "admin_panel"}}
             $.pjax({url: this.value, container: '#pjax-container'});
         });
     </script>
-{{end}}`,"components/popup":`{{define "popup"}}
+{{end}}`, "components/popup": `{{define "popup"}}
 <div class="modal fade" id="{{.ID}}" tabindex="-1" role="dialog" aria-labelledby="{{.ID}}" aria-hidden="true">
     <div class="modal-dialog modal-{{.Size}}" role="document">
         <div class="modal-content">
@@ -856,9 +856,9 @@ var TemplateList = map[string]string{"admin_panel":`{{define "admin_panel"}}
         </div>
     </div>
 </div>
-{{end}}`,"components/row":`{{define "row"}}
+{{end}}`, "components/row": `{{define "row"}}
 <div class="row">{{langHtml .Content}}</div>
-{{end}}`,"components/table/box-header":`{{define "box-header"}}
+{{end}}`, "components/table/box-header": `{{define "box-header"}}
     <div class="pull-right">
 
         {{if ne .IsHideRowSelector true}}
@@ -991,7 +991,7 @@ var TemplateList = map[string]string{"admin_panel":`{{define "admin_panel"}}
 
         {{end}}
     </script>
-{{end}}`,"components/table":`{{define "table"}}
+{{end}}`, "components/table": `{{define "table"}}
     <table class="table table-hover" style="min-width: {{.MinWidth}}px;table-layout: {{.Layout}};">
         {{if eq .Type "table"}}
             <thead>
@@ -1511,7 +1511,7 @@ var TemplateList = map[string]string{"admin_panel":`{{define "admin_panel"}}
             }
         </style>
     {{end}}
-{{end}}`,"components/tabs":`{{define "tabs"}}
+{{end}}`, "components/tabs": `{{define "tabs"}}
 <div class="nav-tabs-custom">
     <ul class="nav nav-tabs">
         {{range $key, $data := .Data}}
@@ -1536,7 +1536,7 @@ var TemplateList = map[string]string{"admin_panel":`{{define "admin_panel"}}
         {{end}}
     </div>
 </div>
-{{end}}`,"components/tree-header":`{{define "tree-header"}}
+{{end}}`, "components/tree-header": `{{define "tree-header"}}
 <div class="btn-group">
     <a class="btn btn-primary btn-sm tree-model-tree-tools" data-action="expand">
         <i class="fa fa-plus-square-o"></i>&nbsp;{{lang "expand"}}
@@ -1555,7 +1555,7 @@ var TemplateList = map[string]string{"admin_panel":`{{define "admin_panel"}}
 </div>
 <div class="btn-group">
 </div>
-{{end}}`,"components/tree":`{{define "tree"}}
+{{end}}`, "components/tree": `{{define "tree"}}
     <div class="dd" id="tree-model">
         {{$EditUrl := .EditUrl}}
         {{$UrlPrefix := .UrlPrefix}}
@@ -1671,7 +1671,7 @@ var TemplateList = map[string]string{"admin_panel":`{{define "admin_panel"}}
             $(".roles").select2({"allowClear": true, "placeholder": "Roles"});
         });
     </script>
-{{end}}`,"content":`{{define "content"}}
+{{end}}`, "content": `{{define "content"}}
     <script>
         $('a.new-tab-link').on('click', function () {
             listenerForAddNavTab($(this).attr('href'), $(this).attr('data-title'))
@@ -1696,7 +1696,7 @@ var TemplateList = map[string]string{"admin_panel":`{{define "admin_panel"}}
     <section class="content">
         {{.Panel.Content}}
     </section>
-{{end}}`,"control_panel":`{{define "control_panel"}}
+{{end}}`, "control_panel": `{{define "control_panel"}}
     <div class="control-sidebar-bg" style="position: fixed; height: auto;"></div>
     <aside class="control-sidebar control-sidebar-dark control-sidebar-open"
            style="position: fixed; max-height: 100%; overflow: auto;">
@@ -1894,14 +1894,14 @@ var TemplateList = map[string]string{"admin_panel":`{{define "admin_panel"}}
             </div>
         </div>
     </aside>
-{{end}}`,"footer":`{{define "footer"}}
+{{end}}`, "footer": `{{define "footer"}}
 <footer class="main-footer">
     <div class="pull-right hidden-xs">
-        <b>Version</b> {{.System.Version}}
+        <b>Version</b> 系统版本
     </div>
-    <strong>Powered by <a href="https://github.com/GoAdminGroup/go-admin">GoAdmin</a>.</strong>
+    <strong>Powered by <a href="https://github.com/GoAdminGroup/go-admin">Ehttps://github.com/GoAdminGroup/themes.git</a>.</strong>
 </footer>
-{{end}}`,"head":`{{define "head"}}
+{{end}}`, "head": `{{define "head"}}
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -1920,7 +1920,7 @@ var TemplateList = map[string]string{"admin_panel":`{{define "admin_panel"}}
 
         {{.CustomHeadHtml}}
     </head>
-{{end}}`,"header":`{{define "header"}}
+{{end}}`, "header": `{{define "header"}}
     <header class="main-header">
         <!-- Logo -->
         <a href="{{.UrlPrefix}}" class="logo">
@@ -1943,9 +1943,9 @@ var TemplateList = map[string]string{"admin_panel":`{{define "admin_panel"}}
             </div>
         </nav>
     </header>
-{{end}}`,"js":`{{define "js"}}
+{{end}}`, "js": `{{define "js"}}
     <script src="{{link .CdnUrl .UrlPrefix "/assets/dist/js/all_2.min.js"}}"></script>
-{{end}}`,"layout":`{{define "layout"}}
+{{end}}`, "layout": `{{define "layout"}}
 
     <!DOCTYPE html>
     <html>
@@ -1976,7 +1976,7 @@ var TemplateList = map[string]string{"admin_panel":`{{define "admin_panel"}}
     </html>
 
 {{end}}
-`,"menu":`{{define "menu"}}
+`, "menu": `{{define "menu"}}
     <ul class="sidebar-menu" data-widget="tree">
         {{$UrlPrefix := .UrlPrefix}}
         {{range $key, $list := .Menu.List }}
@@ -2014,7 +2014,7 @@ var TemplateList = map[string]string{"admin_panel":`{{define "admin_panel"}}
             {{end}}
         {{end}}
     </ul>
-{{end}}`,"sidebar":`{{define "sidebar"}}
+{{end}}`, "sidebar": `{{define "sidebar"}}
     <!-- Left side column. contains the logo and sidebar -->
     <aside class="main-sidebar">
         <!-- sidebar: style can be found in sidebar.less -->
@@ -2050,4 +2050,4 @@ var TemplateList = map[string]string{"admin_panel":`{{define "admin_panel"}}
         </section>
         <!-- /.sidebar -->
     </aside>
-{{end}}`,}
+{{end}}`}
