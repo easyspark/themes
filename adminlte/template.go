@@ -4,6 +4,8 @@ var TemplateList = map[string]string{"admin_panel": `{{define "admin_panel"}}
     <div class="navbar-custom-menu">
         <ul class="nav navbar-nav">
 
+            {{.NavButtonsHTML}}
+
             <li title="{{lang "Fixed the sidebar"}}">
                 <a href="javascript:void(0);" class="fixed-btn" data-click="false">
                     <i class="fa fa-thumb-tack"></i>
@@ -248,17 +250,17 @@ var TemplateList = map[string]string{"admin_panel": `{{define "admin_panel"}}
     <div class="input-group">
         <span class="input-group-addon"><i class="fa"></i></span>
         {{if eq .Value ""}}
-            <input style="width: 140px" type="text" id="icon" name="{{.Field}}" value="fa-bars"
-                   class="form-control icon iconpicker-element iconpicker-input"
+            <input style="width: 140px" type="text" name="{{.Field}}" value="fa-bars"
+                   class="form-control {{.Field}}"
                    placeholder="{{lang "Input Icon"}}">
         {{else}}
-            <input style="width: 140px" type="text" id="icon" name="{{.Field}}" value="{{.Value}}"
-                   class="form-control icon iconpicker-element iconpicker-input"
+            <input style="width: 140px" type="text" name="{{.Field}}" value="{{.Value}}"
+                   class="form-control {{.Field}}"
                    placeholder="{{lang "Input Icon"}}">
         {{end}}
     </div>
     <script>
-        $('.iconpicker-input').iconpicker({placement: 'bottomLeft'});
+        $('.{{.Field}}').iconpicker({placement: 'bottomLeft'});
     </script>
 {{end}}`, "components/form/ip": `{{define "form_ip"}}
     <div class="input-group">
@@ -1667,7 +1669,6 @@ var TemplateList = map[string]string{"admin_panel": `{{define "admin_panel"}}
                 }
             });
             $(".parent_id").select2({"allowClear": true, "placeholder": "Parent"});
-            $('.icon').iconpicker({placement: 'bottomLeft'});
             $(".roles").select2({"allowClear": true, "placeholder": "Roles"});
         });
     </script>
